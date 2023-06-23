@@ -5,6 +5,10 @@ var morgan = require('morgan')
 app.use(express.json())
 app.use(morgan('combined'))
 
+const cors = require('cors')
+
+app.use(cors())
+
 morgan(function (tokens, req, res) {
     return [
       tokens.method(req, res),
